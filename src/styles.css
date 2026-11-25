@@ -28,10 +28,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Global styles: apply to every component in the application. */
 body {
   min-height: 100vh;
   margin: 0;
-  color: var(--page-text);
+  color: var(--page-text); /* Kept your custom text color instead of #252525 */
   background:
     radial-gradient(ellipse at 8% 0%, rgba(23, 105, 170, 0.16), transparent 42%),
     radial-gradient(ellipse at 95% 35%, rgba(230, 36, 41, 0.08), transparent 40%),
@@ -41,15 +42,22 @@ body {
   line-height: 1.7;
 }
 
-/* Shared spacing for content sections */
+/* Shared spacing for content sections (Updated to 26px per tutorial) */
 section {
-  margin: 1.6rem 0;
+  margin: 26px 0;
+}
+
+/* Page container, shared by every routed page. (Added from Step 3.4) */
+.resume {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 32px;
 }
 
 /* Shared heading style */
 .section-title {
   margin: 0 0 1rem;
-  padding-bottom: 0.55rem;
+  padding-bottom: 6px; /* Updated to match tutorial */
   color: var(--marvel-gold);
   border-bottom: 1px solid var(--section-border);
   font-size: 1.15rem;
@@ -88,6 +96,12 @@ section {
 
   .section-title {
     font-size: 1.05rem;
+  }
+
+  /* Added responsive .resume rules from Step 3.4 */
+  .resume {
+    margin: 24px auto;
+    padding: 0 18px;
   }
 }
 

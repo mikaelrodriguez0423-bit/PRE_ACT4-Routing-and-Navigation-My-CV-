@@ -1,23 +1,16 @@
-<main class="resume">
-  <app-header
-    [fullName]="fullName"
-    [location]="location"
-    [email]="email"
-    [phone]="phone"
-    [profile]="profile" />
+<nav class="topnav">
+  <a class="brand" routerLink="/">My CV</a>
+  <ul>
+    <li>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    </li>
+    <li>
+      <a routerLink="/data-binding" routerLinkActive="active">Data Binding</a>
+    </li>
+    <li>
+      <a routerLink="/directives" routerLinkActive="active">Directives</a>
+    </li>
+  </ul>
+</nav>
 
-  <app-profile-card />
-
-  <app-skills
-    [skills]="skills"
-    (skillSelected)="onSkillSelected($event)" />
-
-  <section class="interaction">
-    <h2 class="section-title">Angular Interaction</h2>
-    <p>{{ message }}</p>
-  </section>
-
-  <app-footer
-    [fullName]="fullName"
-    [proficiencies]="proficiencies" />
-</main>
+<router-outlet />

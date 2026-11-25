@@ -3,6 +3,57 @@
    Keep global body, section and heading rules in styles.css
    ========================================================= */
 
+/* NEW: Navigation Shell Styles (Step 5.3) */
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding: 12px 32px;
+  background: #081b35; /* Changed to your Marvel Navy for a sleeker look */
+  border-bottom: 3px solid #e62429; /* Added a Marvel Red accent border */
+}
+
+.brand {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.topnav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topnav ul a {
+  display: block;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #ffc928; /* Marvel Gold for inactive links */
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.topnav ul a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Added by routerLinkActive when the link matches the current URL. */
+.topnav ul a.active {
+  background: #ffc928; /* Marvel Gold background for active state */
+  color: #06152a; /* Dark text for contrast */
+  font-weight: bold;
+}
+
+/* Existing Resume Container Styles */
 .resume {
   --marvel-red: #e62429;
   --marvel-blue: #1769aa;
@@ -38,6 +89,10 @@
 
 /* Responsive app layout */
 @media (max-width: 600px) {
+  .topnav {
+    padding: 12px 18px;
+  }
+
   .resume {
     width: calc(100% - 1.5rem);
     margin: 0.75rem auto;
